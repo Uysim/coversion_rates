@@ -3,6 +3,10 @@ module Response
     def json_response
       @json_response ||= JSON.parse(response.body)
     end
+
+    def last_json_response
+      JSON.parse(last_response.body)
+    end
   end
 end
 

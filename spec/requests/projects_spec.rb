@@ -3,7 +3,7 @@ describe ProjectsController do
 
   context "POST to /api/v1/projects" do
     let(:response) { post "/api/v1/projects" }
-    it "returns status 200 OK" do 
+    it "creates project with api_key" do 
       expect(response).to be_ok
       expect(json_response).to include({
         "api_key" => be_present
