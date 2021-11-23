@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe ConversionRatesApp do
-  let(:app) { ConversionRatesApp.new }
+describe ApplicationController do
+  let(:app) { ApplicationController.new }
 
   context "GET to /" do
     let(:response) { get "/" }

@@ -1,2 +1,2 @@
-require './app'
-run ConversionRatesApp
+require_relative './config/environment'
+run ApplicationController
