@@ -8,6 +8,7 @@ App develop for money exchange API. Currently we support only
 - Sinatra 
 - Puma
 - RSpec
+- ActiveRecord
 
 ### Install Required Gems
 
