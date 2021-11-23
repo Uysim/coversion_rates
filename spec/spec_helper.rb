@@ -17,6 +17,9 @@ require_relative '../config/environment'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+Dir[File.join('./spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+
+
 RSpec.configure do |config|
   config.include Rack::Test::Methods
   # rspec-expectations config goes here. You can use an alternate

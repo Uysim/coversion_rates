@@ -27,3 +27,17 @@ bundle exec puma
 ```
 bundle exec rspec
 ```
+
+### API
+
+##### Create project
+
+`POST /api/v1/projects`
+
+Example response:
+```json
+{
+  id: 1,
+  api_key: "rkU7cRepk9DuoaqecZFH6RdQ" // api key for authorization
+}
+```

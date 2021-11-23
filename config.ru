@@ -1,2 +1,4 @@
 require_relative './config/environment'
-run ApplicationController
+
+use ProjectsController
+run RootController

@@ -1,7 +1,7 @@
 require "spec_helper"
 
-describe ApplicationController do
-  let(:app) { ApplicationController.new }
+describe RootController do
+  let(:app) { RootController.new }
 
   context "GET to /" do
     let(:response) { get "/" }
