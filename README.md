@@ -7,9 +7,22 @@ App develop for money exchange API. Currently we support only
 - Ruby 3.0.2
 - Sinatra 
 - Puma
+- RSpec
+
+### Install Required Gems
+
+```
+bundle install
+```
 
 ### Start Server 
+
 ```
 bundle exec puma
 ```
 
+### Run Test 
+
+```
+bundle exec rspec
+```
