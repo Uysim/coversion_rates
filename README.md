@@ -34,6 +34,14 @@ bundle exec rspec
 - TO DO: Change to update rates with cronjob or background job. Currently, update on app start for testing purpose only
 
 
+### Run App with docker
+
+```
+docker-compose up
+```
+then server will be available at `http://localhost:3000`
+
+
 ### API
 
 ##### Create project
