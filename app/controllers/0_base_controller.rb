@@ -13,14 +13,18 @@ class BaseController < Sinatra::Base
   private
 
   def pundit_user
-    current_project
+    current_api_key
+  end
+
+  def current_api_key
+    @current_api_key ||= ApiKey.find_by(token: request.env["HTTP_AUTHORIZATION"])
   end
 
   def current_project
-    @current_project ||= Project.find_by(api_key: request.env["HTTP_AUTHORIZATION"])
+    current_api_key.project if current_api_key.present?
   end
 
   def authenticate!
-    halt 401, "Unauthorized" unless current_project
+    halt 401, "Unauthorized" unless current_project.present?
   end
 end

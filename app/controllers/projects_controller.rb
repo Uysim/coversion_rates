@@ -2,7 +2,7 @@ class ProjectsController < BaseController
 
   post '/api/v1/projects' do
     @project = Project.create!
-    @project.to_json
+    @project.as_json.merge(api_keys: @project.api_keys.as_json).to_json
   end
 
   delete '/api/v1/projects/:id' do

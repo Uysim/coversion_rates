@@ -16,6 +16,13 @@ App develop for money exchange API. Currently we support only
 bundle install
 ```
 
+### Setup Database
+
+```
+bundle exec rake db:create 
+bundle exec rake db:migrate
+```
+
 ### Start Server 
 
 ```
@@ -25,6 +32,7 @@ bundle exec puma
 ### Run Test 
 
 ```
+bundle exec rake db:test:prepare
 bundle exec rspec
 ```
 
@@ -52,10 +60,12 @@ Example response:
 ```json
 {
   id: 1,
-  api_key: "rkU7cRepk9DuoaqecZFH6RdQ" // api key for authorization
+  api_keys: [{
+    id: 1, 
+    token: "rkU7cRepk9DuoaqecZFH6RdQ" // Authorization token key
+  }]
 }
 ```
-
 
 ##### Delete Project
 
@@ -63,6 +73,38 @@ Example response:
 
 headers
 - `Authorization` api key from project 
+
+
+
+##### Create API Key
+
+`POST /api/v1/api_keys`
+
+headers
+- `Authorization` token from one of api key in project
+
+Example response:
+```json
+{
+  id: 1,
+  token: "rkU7cRepk9DuoaqecZFH6RdQ" // Authorization token key
+}
+```
+
+##### Delete API Key
+
+`DELETE /api/v1/api_keys/current`
+
+headers
+- `Authorization` token of api key you want to delete
+
+
+##### Reload API Key
+
+`POST /api/v1/api_keys/current/reload`
+
+headers
+- `Authorization` token of api key you want to regenerate token
 
 
 ##### Exchange rate

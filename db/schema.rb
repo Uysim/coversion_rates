@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_154157) do
+ActiveRecord::Schema.define(version: 2021_11_25_144920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string "token", null: false
+    t.bigint "project_id", null: false
+    t.index ["project_id"], name: "index_api_keys_on_project_id"
+    t.index ["token"], name: "index_api_keys_on_token"
+  end
 
   create_table "exchange_rates", force: :cascade do |t|
     t.string "from"
@@ -22,8 +29,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_154157) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "api_key"
-    t.index ["api_key"], name: "index_projects_on_api_key"
   end
 
+  add_foreign_key "api_keys", "projects"
 end
