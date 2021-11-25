@@ -57,6 +57,14 @@ Example response:
 ```
 
 
+##### Delete Project
+
+`DELETE /api/v1/projects/:project_id`
+
+headers
+- `Authorization` api key from project 
+
+
 ##### Exchange rate
 
 `GET /api/v1/exchange_rate`

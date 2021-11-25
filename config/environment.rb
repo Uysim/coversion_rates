@@ -9,5 +9,6 @@ APP_ROOT = File.expand_path('..', __dir__)
 
 Dir.glob(File.join(APP_ROOT, 'app', 'models', '*.rb')).each { |file| require file }
 Dir.glob(File.join(APP_ROOT, 'app', 'services', '*.rb')).each { |file| require file }
+Dir.glob(File.join(APP_ROOT, 'app', 'policies', '*.rb')).each { |file| require file }
 Dir.glob(File.join(APP_ROOT, 'config', 'initializers', '*.rb')).each { |file| require file }
 Dir.glob(File.join(APP_ROOT, 'app', 'controllers', '*.rb')).each { |file| require file }

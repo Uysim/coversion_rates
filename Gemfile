@@ -9,6 +9,7 @@ gem "rake"
 gem "dry-validation"
 gem "money"
 gem "eu_central_bank"
+gem "pundit"
 
 group :test do
   gem "rspec"
